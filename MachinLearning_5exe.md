@@ -141,7 +141,8 @@ array([[ 0.5, 0.5]])
 分類器の訓練を行うためには，先ほど定義したラベルの配列である Y と，対応する特徴量の配列を一緒にして kNN 分類器に入力する．
 
 ```
-X = np.asarray([extract_features_from_body(text) for post_id, text in fetch_posts() if post_id in all_answers])knn = neighbors.KNeighborsClassifier() knn.fit(X, Y)
+X = np.asarray([extract_features_from_body(text) for post_id, text in fetch_posts() if post_id in all_answers])knn = neighbors.KNeighborsClassifier()
+knn.fit(X, Y)
 ```標準のパラメータを用いると，データに対して，k=5 つまり 5 近傍(5NN)でフィッティングを行う．
 どのような k をとるかいいかはまだ議論できないので後述する．
 ### 5.4.4 分類器の評価を行う
